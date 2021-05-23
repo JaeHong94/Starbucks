@@ -1,3 +1,112 @@
+/* Common */
 body {
+  color: #333;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
   font-family: 'Nanum Gothic', sans-serif;
+}
+body,
+input {
+  box-sizing: border-box;
+}
+img {
+  display: block;
+}
+a {
+  text-decoration: none;
+}
+
+/* Header */
+header {
+  background-color: #f6f5f0;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+header .inner {
+  position: relative;
+  width: 1100px;
+  height: 120px;
+  margin: 0 auto;
+}
+
+header .logo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 75px;
+  margin: auto;
+}
+
+header .sub-menu {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  display: flex;
+}
+
+header .sub-menu ul.menu {
+  display: flex;
+  font-family: Arial, sans-serif;
+}
+
+header .sub-menu ul.menu li {
+  position: relative;
+}
+
+header .sub-menu ul.menu li:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 1px;
+  height: 12px;
+  background-color: #e5e5e5;
+}
+
+header .sub-menu ul.menu li a {
+  font-size: 12px;
+  padding: 11px 16px;
+  display: block;
+  color: #656565;
+}
+
+header .sub-menu ul.menu li a:hover {
+  color: #000;
+}
+
+header .sub-menu .search {
+  position: relative;
+  height: 34px;
+}
+
+header .sub-menu .search input {
+  width: 36px;
+  height: 34px;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  background-color: #fff;
+  color: #777;
+  transition: width 0.4s ease-in-out;
+}
+
+header .sub-menu .search input:focus {
+  width: 190px;
+}
+
+header .sub-menu .search .material-icons {
+  height: 24px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 5px;
+  margin: auto;
+  transition: opacity 0.4s ease-in-out;
+}
+
+header .sub-menu .search.focused .material-icons {
+  opacity: 0;
 }
