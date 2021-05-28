@@ -2,6 +2,9 @@ const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
 const fadeEls = document.querySelectorAll('.visual .fade-in');
+const promotionEl = document.querySelector('.promotion');
+const promotionToggleBtn = document.querySelector('.toggle-promotion');
+let isHidePromotion = false;
 
 searchEl.addEventListener('click', function () {
   searchInputEl.focus();
@@ -41,4 +44,39 @@ fadeEls.forEach(function (fadeEl, index) {
     delay: (index + 1) * 0.7,
     opacity: 1,
   });
+});
+
+new Swiper('.notice-line .swiper-container', {
+  direction: 'vertical',
+  autoplay: true,
+  loop: true,
+});
+
+new Swiper('.promotion .swiper-container', {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+  pagination: {
+    el: '.promotion .swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    prevEl: '.promotion .swiper-prev',
+    nextEl: '.promotion .swiper-next',
+  },
+});
+
+promotionToggleBtn.addEventListener('click', function () {
+  isHidePromotion = !isHidePromotion;
+  if (isHidePromotion) {
+    // Hide
+    promotionEl.classList.add('hide');
+  } else {
+    // Visible
+    promotionEl.classList.remove('hide');
+  }
 });
