@@ -1,6 +1,7 @@
 const searchEl = document.querySelector('.search');
 const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
+const fadeEls = document.querySelectorAll('.visual .fade-in');
 
 searchEl.addEventListener('click', function () {
   searchInputEl.focus();
@@ -34,3 +35,10 @@ window.addEventListener(
     }
   }, 300)
 );
+
+fadeEls.forEach(function (fadeEl, index) {
+  gsap.to(fadeEl, 0.6, {
+    delay: (index + 1) * 0.7,
+    opacity: 1,
+  });
+});

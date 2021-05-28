@@ -21,6 +21,56 @@ a {
   margin: 0 auto;
   position: relative;
 }
+.btn {
+  display: block;
+  width: 130px;
+  padding: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: 0.4s ease-in-out;
+}
+.btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse {
+  border-color: #333;
+  color: #fff;
+}
+.btn.btn--reverse:hover {
+  background-color: transparent;
+  color: #333;
+}
+.btn.btn--brown {
+  border-color: #592b18;
+  color: #592b18;
+}
+.btn.btn--brown:hover {
+  background-color: #592b18;
+  color: #fff;
+}
+.btn.btn--gold {
+  border-color: #d9aa8a;
+  color: #d9aa8a;
+}
+.btn.btn--gold:hover {
+  background-color: #d9aa8a;
+  color: #fff;
+}
+.btn.btn--white {
+  border-color: #fff;
+  color: #fff;
+}
+.btn.btn--white:hover {
+  background-color: #fff;
+  color: #333;
+}
 
 /* Header */
 header {
@@ -29,6 +79,7 @@ header {
   top: 0;
   background-color: #f6f5f0;
   border-bottom: 1px solid #c8c8c8;
+  z-index: 9;
 }
 
 header > .inner {
@@ -124,9 +175,6 @@ header .main-menu {
   display: flex;
 }
 
-header .main-menu .item {
-}
-
 header .main-menu .item .item__name {
   padding: 10px 20px 34px 20px;
   font-family: Arial, sans-serif;
@@ -207,4 +255,61 @@ header .badges .badge {
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
   cursor: pointer;
+}
+
+/* Visual */
+.visual {
+  margin-top: 120px;
+  background-image: url('../images/visual_bg.jpg');
+  background-position: center;
+}
+
+.visual .inner {
+  height: 646px;
+}
+
+.visual .title {
+  position: absolute;
+  top: 88px;
+  left: -10px;
+}
+
+.visual .title .btn {
+  position: absolute;
+  top: 259px;
+  left: 173px;
+}
+
+.visual .cup1.image {
+  position: absolute;
+  bottom: 0;
+  right: -47px;
+}
+
+.visual .cup1.text {
+  position: absolute;
+  top: 38px;
+  right: 171px;
+}
+
+.visual .cup2.image {
+  position: absolute;
+  bottom: 0;
+  right: 162px;
+}
+
+.visual .cup2.text {
+  position: absolute;
+  top: 321px;
+  right: 416px;
+}
+
+.visual .spoon {
+  position: absolute;
+  bottom: 0;
+  right: 275px;
+}
+
+.visual .fade-in {
+  opacity: 0;
 }
