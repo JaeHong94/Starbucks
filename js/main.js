@@ -4,6 +4,8 @@ const badgeEl = document.querySelector('header .badges');
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
+const spyEls = document.querySelectorAll('section.scroll-spy');
+
 let isHidePromotion = false;
 
 searchEl.addEventListener('click', function () {
@@ -97,3 +99,12 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', 0.5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic.Scene({
+    triggerElement: spyEl,
+    triggerHook: 0.8,
+  })
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
+});
