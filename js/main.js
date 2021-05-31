@@ -5,6 +5,8 @@ const fadeEls = document.querySelectorAll('.visual .fade-in');
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 const spyEls = document.querySelectorAll('section.scroll-spy');
+const thisYear = document.querySelector('.this-year');
+const toTopEl = document.querySelector('#to-top');
 
 let isHidePromotion = false;
 
@@ -31,11 +33,21 @@ window.addEventListener(
         opacity: 0,
         display: 'none',
       });
+      // to-top visible
+      gsap.to(toTopEl, 0.4, {
+        x: 0,
+        opacity: 1,
+      });
     } else {
       // Badge visible
       gsap.to(badgeEl, 0.4, {
         opacity: 1,
         display: 'block',
+      });
+      // to-top hide
+      gsap.to(toTopEl, 0.4, {
+        x: 100,
+        opacity: 0,
       });
     }
   }, 300)
@@ -118,4 +130,12 @@ spyEls.forEach(function (spyEl) {
   })
     .setClassToggle(spyEl, 'show')
     .addTo(new ScrollMagic.Controller());
+});
+
+thisYear.textContent = new Date().getFullYear();
+
+toTopEl.addEventListener('click', function () {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
 });
